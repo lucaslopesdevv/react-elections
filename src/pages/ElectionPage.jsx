@@ -91,7 +91,7 @@ export default function ElectionPage() {
                 />
                 <span className="row-span-1">{candidate.name}</span>
                 <span
-                  className={index === 0 ? "bg-green-700" : "bg-yellow-700"}
+                  className={index === 0 ? "text-green-700" : "text-yellow-700"}
                 >
                   {(
                     (parseInt(votes) /
@@ -105,7 +105,7 @@ export default function ElectionPage() {
                   Votos : {votes?.toLocaleString("pt")}
                 </span>
                 <span
-                  className={index === 0 ? "bg-green-600" : "bg-yellow-500"}
+                  className={index === 0 ? "text-green-600" : "text-yellow-500"}
                 >
                   {index === 0 ? "Eleito" : " Não Eleito"}
                 </span>
