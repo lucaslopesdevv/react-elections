@@ -34,6 +34,7 @@ export default function ElectionPage() {
       if (id === cityId) {
         optionName = name;
       }
+      return optionName;
     });
     return optionName;
   }
