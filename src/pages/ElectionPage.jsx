@@ -15,9 +15,11 @@ export default function ElectionPage() {
   const [candidatesOfCity, setCandidatesOfCity] = useState([]);
   const [cityState, setCityState] = useState("");
 
+  let optionName = "";
+
   useEffect(() => {
     let city = document.getElementById("selectMunicipio").value;
-    // console.log("Effect " + city);
+    console.log("Effect " + city);
     setCandidatesOfCity(getCandidatesByCity(city));
     setCityState(city);
   }, [cityState]);
@@ -25,6 +27,15 @@ export default function ElectionPage() {
   function handleCity(cityId) {
     setCityState(cityId);
     setCandidatesOfCity(getCandidatesByCity(cityId));
+  }
+
+  function getCityName(cityId) {
+    allMunicipios.map(({ id, name }) => {
+      if (id === cityId) {
+        optionName = name;
+      }
+    });
+    return optionName;
   }
 
   return (
@@ -50,7 +61,7 @@ export default function ElectionPage() {
       </Main>
 
       <Elections
-        title={"Eleição em Variável "}
+        title={"Eleição em " + getCityName(cityState)}
         totalComparecidos={
           "Total comparecidos: " +
           getTotalCityVotes(cityState)?.presence.toLocaleString("pt")
