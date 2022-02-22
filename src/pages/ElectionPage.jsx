@@ -85,7 +85,7 @@ export default function ElectionPage() {
             <Election key={candidate.username}>
               <div className="grid grid-rows">
                 <img
-                  className="box-content mr-3 h-20 w-20 p-2 border-4 "
+                  className="rounded-full box-content mr-3 h-20 w-20 p-2 border-4 "
                   src={`/img/${candidate.username}.png`}
                   alt="Nao encontrada"
                 />
